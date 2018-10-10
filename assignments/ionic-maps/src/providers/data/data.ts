@@ -19,14 +19,13 @@ addLocation(position){
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 
-  let stamp = firebase.database.ServerValue.TIMESTAMP;
-  console.log(stamp);
+  let stamp = Date.now();
 
   return new Promise<any>((resolve, reject) => {
     this.firestore.collection('/locations').add({
       id: 1,
       point: new firebase.firestore.GeoPoint(lat, lon),
-      time: new Date(stamp.toString())
+      time: new Date(stamp)
     })
     .then(
       (res) => {
