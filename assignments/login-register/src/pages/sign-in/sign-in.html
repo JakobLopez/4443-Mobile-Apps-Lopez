@@ -1,17 +1,18 @@
 <ion-header no-border>
 </ion-header>
 
-<ion-content no-bounce padding>
+<ion-content no-bounce padding class="bg">
 
   <ion-row class="app-icon-container">
     <ion-col text-center>
-      <ion-icon name="ionic" class="app-icon-zoom"></ion-icon>
+      <img ion-img src="assets/imgs/flapp_icon.png">
+
     </ion-col>
   </ion-row>
 
   <form [formGroup]="credentialsForm">
 
-    <ion-item>
+    <ion-item class="form">
       <ion-label floating>Email</ion-label>
       <ion-input [formControl]="credentialsForm.controls['email']" type="email"></ion-input>
     </ion-item>
@@ -21,7 +22,7 @@
       Please enter a valid email.
     </div>
 
-    <ion-item>
+    <ion-item class="form">
       <ion-label floating>Password</ion-label>
       <ion-input [formControl]="credentialsForm.controls['password']" type="password"></ion-input>
     </ion-item>
@@ -65,6 +66,6 @@
 
   </form>
 
-  
+
 
 </ion-content>

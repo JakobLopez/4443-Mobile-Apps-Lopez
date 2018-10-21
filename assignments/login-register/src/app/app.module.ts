@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
@@ -28,6 +29,7 @@ import { SignupPageModule } from '../pages/signup/signup.module';
     AngularFireAuthModule,
     AngularFirestoreModule,
     SignupPageModule,
+    
  
   ],
   bootstrap: [IonicApp],
@@ -42,6 +44,7 @@ import { SignupPageModule } from '../pages/signup/signup.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     AuthService,
+    GooglePlus
 
     
   ]

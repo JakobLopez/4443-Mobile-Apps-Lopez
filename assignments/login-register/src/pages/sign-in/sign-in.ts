@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regexValidators } from '../validator';
 import { AuthService } from '../../providers/auth-service/auth-service';
-import { SignupPage } from '../signup/signup';
+
 
 @IonicPage()
 @Component({
@@ -86,7 +86,7 @@ export class SignInPage {
   
   //Redirects user to sign up page
   signup() {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push('SignupPage');
   }
 
 }

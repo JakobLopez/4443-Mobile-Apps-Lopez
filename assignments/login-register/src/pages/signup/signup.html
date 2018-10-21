@@ -1,35 +1,38 @@
-<ion-header>
-  <ion-navbar>
+<ion-header class="nav-style">
+  <ion-navbar transparent>
     <ion-title>Sign up</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class='bg'>
 
   <form (ngSubmit)="signup()" [formGroup]="form">
     <ion-list inset>
 
-        <ion-item>
-            <ion-label floating>First Name</ion-label>
-            <ion-input [formControl]="form.controls['first_name']" type="text"></ion-input>
-          </ion-item>
-    
-    
-          <div *ngIf="!form.controls.first_name.valid && 
-          form.controls.first_name.touched" class="validator-error">
-            This field is required
-          </div>
-          <ion-item>
-              <ion-label floating>Last Name</ion-label>
-              <ion-input [formControl]="form.controls['last_name']" type="text"></ion-input>
-            </ion-item>
-      
-      
-            <div *ngIf="!form.controls.last_name.valid && 
+      <ion-item class='form'>
+        <ion-label floating>First Name</ion-label>
+        <ion-input [formControl]="form.controls['first_name']" type="text"></ion-input>
+      </ion-item>
+
+
+      <div *ngIf="!form.controls.first_name.valid && 
+          form.controls.first_name.touched" class="validator-error"
+        color="danger">
+        This field is required
+      </div>
+
+      <ion-item class='form'>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input [formControl]="form.controls['last_name']" type="text"></ion-input>
+      </ion-item>
+
+
+      <div *ngIf="!form.controls.last_name.valid && 
             form.controls.last_name.touched" class="validator-error">
-              This field is required
-            </div>
-      <ion-item>
+        This field is required
+      </div>
+
+      <ion-item class='form'>
         <ion-label floating>Email</ion-label>
         <ion-input [formControl]="form.controls['email']" type="email"></ion-input>
       </ion-item>
@@ -39,7 +42,7 @@
         Please enter a valid email.
       </div>
 
-      <ion-item>
+      <ion-item class='form'>
         <ion-label floating>Password</ion-label>
         <ion-input [formControl]="form.controls['password']" type="password"></ion-input>
       </ion-item>
@@ -52,7 +55,7 @@
     <div padding-horizontal>
       <div class="form-error">{{signupError}}</div>
 
-      <button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+      <button ion-button full color="secondary" type="submit" [disabled]="!form.valid">Sign up</button>
     </div>
   </form>
 </ion-content>
