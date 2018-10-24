@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 498:
+/***/ 500:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignInPageModule", function() { return SignInPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_in__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_in__ = __webpack_require__(502);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var SignInPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 500:
+/***/ 502:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,8 +131,8 @@ var SignInPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-sign-in',template:/*ion-inline-start:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\pages\sign-in\sign-in.html"*/'<ion-header no-border>\n</ion-header>\n\n<ion-content no-bounce padding class="bg">\n\n  <ion-row class="app-icon-container">\n    <ion-col text-center>\n      <img ion-img src="assets/imgs/flapp_icon.png">\n\n    </ion-col>\n  </ion-row>\n\n  <form [formGroup]="credentialsForm">\n\n    <ion-item class="form">\n      <ion-label floating>Email</ion-label>\n      <ion-input [formControl]="credentialsForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item>\n\n    <div *ngIf="!credentialsForm.controls.email.valid &&\n        credentialsForm.controls.email.dirty" class="validator-error">\n      Please enter a valid email.\n    </div>\n\n    <ion-item class="form">\n      <ion-label floating>Password</ion-label>\n      <ion-input [formControl]="credentialsForm.controls[\'password\']" type="password"></ion-input>\n    </ion-item>\n\n    <div *ngIf="!credentialsForm.controls.password.valid &&\n        credentialsForm.controls.password.dirty" class="validator-error">\n      Please enter a valid password.\n    </div>\n\n    <div padding-horizontal>\n      <div class="form-error">{{loginError}}</div>\n    </div>\n    <ion-row class="sign-in-button-container">\n      <ion-col text-center>\n        <button ion-button block color="secondary" [disabled]="!credentialsForm.valid" (click)="onSignIn()">\n          Sign in\n        </button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col text-center>\n        <button ion-button clear color="light" (click)="onForgotPassword()">\n          Forgot your password?\n        </button>\n      </ion-col>\n    </ion-row>\n\n    <ion-list>\n\n      <button ion-button icon-left block clear (click)="tryGoogleLogin()">\n        <ion-icon name="logo-google"></ion-icon>\n        Log in with Google\n      </button>\n\n      <button ion-button icon-left block clear (click)="signup()">\n        <ion-icon name="person-add"></ion-icon>\n        Sign up\n      </button>\n    </ion-list>\n\n  </form>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\pages\sign-in\sign-in.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__["a" /* AuthService */]])
     ], SignInPage);

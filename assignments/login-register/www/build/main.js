@@ -181,11 +181,11 @@ webpackEmptyAsyncContext.id = 197;
 
 var map = {
 	"../pages/location/location.module": [
-		497,
+		499,
 		1
 	],
 	"../pages/sign-in/sign-in.module": [
-		498,
+		500,
 		0
 	],
 	"../pages/signup/signup.module": [
@@ -393,8 +393,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/location/location.module#LocationPageModule', name: 'LocationPage', segment: 'location', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sign-in/sign-in.module#SignInPageModule', name: 'SignInPage', segment: 'sign-in', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/sign-in/sign-in.module#SignInPageModule', name: 'SignInPage', segment: 'sign-in', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2__["AngularFireModule"].initializeApp(__WEBPACK_IMPORTED_MODULE_10__credentials__["a" /* FIREBASE_CONFIG */]),
@@ -493,7 +493,7 @@ var SignupPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-signup',template:/*ion-inline-start:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\pages\signup\signup.html"*/'<ion-header class="nav-style">\n  <ion-navbar transparent>\n    <ion-title>Sign up</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class=\'bg\'>\n\n  <form (ngSubmit)="signup()" [formGroup]="form">\n    <ion-list inset>\n\n      <ion-item class=\'form\'>\n        <ion-label floating>First Name</ion-label>\n        <ion-input [formControl]="form.controls[\'first_name\']" type="text"></ion-input>\n      </ion-item>\n\n\n      <div *ngIf="!form.controls.first_name.valid && \n          form.controls.first_name.touched" class="validator-error"\n        color="danger">\n        This field is required\n      </div>\n\n      <ion-item class=\'form\'>\n        <ion-label floating>Last Name</ion-label>\n        <ion-input [formControl]="form.controls[\'last_name\']" type="text"></ion-input>\n      </ion-item>\n\n\n      <div *ngIf="!form.controls.last_name.valid && \n            form.controls.last_name.touched" class="validator-error">\n        This field is required\n      </div>\n\n      <ion-item class=\'form\'>\n        <ion-label floating>Email</ion-label>\n        <ion-input [formControl]="form.controls[\'email\']" type="email"></ion-input>\n      </ion-item>\n\n\n      <div *ngIf="!form.controls.email.valid && form.controls.email.touched" class="validator-error">\n        Please enter a valid email.\n      </div>\n\n      <ion-item class=\'form\'>\n        <ion-label floating>Password</ion-label>\n        <ion-input [formControl]="form.controls[\'password\']" type="password"></ion-input>\n      </ion-item>\n\n      <div *ngIf="!form.controls.password.valid && form.controls.password.touched" class="validator-error">\n        Please enter a valid email.\n      </div>\n    </ion-list>\n\n    <div padding-horizontal>\n      <div class="form-error">{{signupError}}</div>\n\n      <button ion-button full color="secondary" type="submit" [disabled]="!form.valid">Sign up</button>\n    </div>\n  </form>\n</ion-content>\n'/*ion-inline-end:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\pages\signup\signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__["a" /* AuthService */]])
     ], SignupPage);
     return SignupPage;
 }());
@@ -528,6 +528,8 @@ var FIREBASE_CONFIG = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_status_bar__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_timer__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_timer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_timer__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -541,26 +543,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, menu) {
-        this.menu = menu;
+    function MyApp(platform, statusBar, splashScreen) {
+        var _this = this;
         this.rootPage = 'SignInPage';
+        //sets splash to true
+        this.showSplash = true;
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
+            //after 3k milliseconds, hide splash animation
+            Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_timer__["timer"])(3000).subscribe(function () { return _this.showSplash = false; });
         });
     }
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* Nav */])
-    ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\app\app.html"*/'<div *ngIf=\'showSplash\' class=\'splash\'>\n    <div class="spinner">\n        <div class="rect1"></div>\n        <div class="rect2"></div>\n        <div class="rect3"></div>\n        <div class="rect4"></div>\n        <div class="rect5"></div>\n      </div>\n</div>\n\n\n<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\theja\desktop\mobile apps\geolocation\ionic-maps\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* MenuController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
